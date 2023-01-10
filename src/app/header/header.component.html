@@ -1,0 +1,46 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><h2>MY APPLICATION</h2></a>
+    </div>
+  </nav>
+<!-- side nav -->
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto bg-primary">
+            <div class="d-flex flex-column align-items-center align-items-sm-start  pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center  text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Home</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="{{source.url}}" class="nav-link align-middle px-0 text-white" *ngFor="let source of sources"><button class="btn btn-primary" (click)="searchSource(source)">
+                            <i class="fa-sharp fa-solid fa-newspaper"></i><span class="ms-1 d-none d-sm-inline"> {{source.name}}</span></button>
+                        </a>
+                    </li></ul>
+            </div>
+        </div>
+        
+        <!-- content -->
+        <div><h1>{{selectNewsChannel}}</h1>
+       
+            <section class="py-1">
+                <div class="container px-1 px-lg-1 ms-0">
+                    <div class="row gx-4 mt-2 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
+                        <div class="col" *ngFor="let article of articles" >
+                            <div class="card h-100">
+                                
+                                <img class="card-img-top" [src]="article.urlToImage" alt="..." height="300px" />
+                                
+                                <div class="card-body p-4">
+                                    <h6 class="float-start">{{article.publishedAt | date:'medium'}}</h6>
+                                        <h6 class="float-end">Author:{{article.author}}</h6><br><br>
+                                        
+                                        <h5 class="fw-bolder">{{article.title}}</h5>
+                                        <p class="card-text" [innerHtml]="article.description"></p>
+                                        <a href="{{article.url}}" style="text-decoration:none;"> read more</a>
+                                </div>   
+                            </div>
+                        </div></div></div></section>
+            
+            
+        </div>

@@ -2,4 +2,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=PT+Sans+Narrow&display=swap');
 body{
     font-family: 'PT Sans Narrow', sans-serif;
+    background-color: rgb(220, 230, 250);
 }
